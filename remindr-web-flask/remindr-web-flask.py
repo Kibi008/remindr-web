@@ -4,15 +4,12 @@ from flask import request
 
 app = Flask(__name__)
 
-
-
 def hello(name=None):
     return render_template('remindr-web-flask.html', person=name)
 
 @app.route("/")
 def hello_world():
-    return "<h1>
-</h1>"
+    return hello("Greg")
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
