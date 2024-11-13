@@ -1,10 +1,12 @@
-from flask import Flask
+from flask import Flask, redirect
 from flask import render_template
 from flask import request
 from flask import session
 from flask_moment import Moment
 from datetime import datetime
 from flask_bootstrap import Bootstrap
+
+""" Paramétrages app """
 
 app = Flask(__name__)
 # Set the secret key to some random bytes. Keep this really secret!
@@ -14,6 +16,7 @@ moment = Moment(app)
 # Init Bootstrap
 Bootstrap(app)
 
+""" Routing """
 
 @app.route("/")
 def hello_world():    
@@ -28,6 +31,13 @@ def login():
         return do_the_login()
     else:
         return show_the_login_form()
+    
+@app.route('/logout', methods=['GET', 'POST'])
+def logout():
+    app.logger.debug('Logout in process...')
+    session.pop("username", None)
+    return redirect("/") 
+    
     
 """ Autres méthodes """
 
