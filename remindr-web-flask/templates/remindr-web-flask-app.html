@@ -1,5 +1,8 @@
+{% extends "bootstrap/base.html" %}
 <html>
-<head></head>
+<head>{% block title %}Remindr - Accueil{% endblock %}</head>
+
+{% block content %}
 <body>
 
 <script>
@@ -10,8 +13,12 @@
 
 <p>Il est {{moment(current_time).format('LLL')}}</p>
 <p><a href="/login">Login</a></p>
+<p></p>
+<p><a href="/logout">Logout</a></p>
+
 
 <h3>Bienvenue sur Remindr {{session['username']}} !</h3>
 
 </body>
+{% endblock %}
 </html>

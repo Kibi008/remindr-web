@@ -4,12 +4,15 @@ from flask import request
 from flask import session
 from flask_moment import Moment
 from datetime import datetime
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
 # Set the secret key to some random bytes. Keep this really secret!
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-moment = Moment(app)
 # Init moment
+moment = Moment(app)
+# Init Bootstrap
+Bootstrap(app)
 
 
 @app.route("/")

@@ -1,23 +1,37 @@
+{% extends "bootstrap/base.html" %}
 <html>
-<head></head>
+<head>{% block title %}Remindr - Login{% endblock %}
+</head>
 <body>
 
-<script>
-{{moment.include_moment()}}
-</script>
 
-<h1>Login</h1>
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
 
-<p><a href="/">Accueil</a></p>
+{% block content %}
+  <script>
+  {{moment.include_moment()}}
+  </script>
 
-{% if username_in_session %}
-  <h1>Hello {{ username_in_session }}!</h1>
-{% else %}
-  <form method=post action="">
-    Nom d'utilisateur <input type="text" name="username" />
-    <input type="submit" value="Login" />
-  </form>
-{% endif %}
+  <h1>Login</h1>
+
+  <p><a href="/">Accueil</a></p>
+
+  {% if username_in_session %}
+    <h1>Hello {{ username_in_session }}!</h1>
+  {% else %}
+    <form method=post action="">
+      Nom d'utilisateur <input type="text" name="username" />
+      <input type="submit" value="Login" />
+    </form>
+  {% endif %}
+{% endblock %}
+
+
+
 
 </body>
 </html>
