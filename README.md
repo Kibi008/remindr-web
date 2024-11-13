@@ -9,3 +9,5 @@ remindr-web-flask\remindr-web-flask.py
 
 12/11/2024 21h : page d'accueil
 13/11/2024 18h38 : première version login fonctionnelle
+13/11/2024 19h13 : première version logout fonctionnelle
+13/11/2024 19h16 : fichier requirements mis à jour
