@@ -1,6 +1,17 @@
-<h2>Template</h2>
+<html>
+<head></head>
+<body>
 
-<p>Message de bienvenue</p>
+<script>
+{{moment.include_moment()}}
+</script>
+
+<h2>Template Accueil</h2>
+
+<p>Il est {{moment(current_time).format('LLL')}}</p>
 <p><a href="/login">Login</a></p>
 
-<h3>Bienvenue sur Remindr {{person}} !</h3>
+<h3>Bienvenue sur Remindr {{session['username']}} !</h3>
+
+</body>
+</html>
