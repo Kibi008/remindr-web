@@ -1,3 +1,11 @@
+<html>
+<head></head>
+<body>
+
+<script>
+{{moment.include_moment()}}
+</script>
+
 <h1>Login</h1>
 
 <p><a href="/">Accueil</a></p>
@@ -5,8 +13,11 @@
 {% if username_in_session %}
   <h1>Hello {{ username_in_session }}!</h1>
 {% else %}
-  <form>
+  <form method=post action="">
     Nom d'utilisateur <input type="text" name="username" />
-    <button type="submit">Login</button>
+    <input type="submit" value="Login" />
   </form>
 {% endif %}
+
+</body>
+</html>
