@@ -25,6 +25,8 @@ def login():
         return do_the_login()
     else:
         return show_the_login_form()
+    
+""" Autres méthodes """
 
 def show_the_login_form():
     return render_template('login.html')
@@ -35,11 +37,9 @@ def do_the_login():
     if 'username' in session:
         username_in_session=session["username"]
         app.logger.debug(username_in_session)
-        session.pop('username', None)
         if username != username_in_session:
-            username_in_session = username # On prend le plus récent, celui qui vient d'être envoyé par le formulaire
-        
-        
+            session['username'] = username
+            username_in_session = username # On prend le plus récent, celui qui vient d'être envoyé par le formulaire        
     else:
         session['username'] = username
         username_in_session = session['username']
