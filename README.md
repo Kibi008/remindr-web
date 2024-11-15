@@ -11,3 +11,4 @@ remindr-web-flask\remindr-web-flask.py
 13/11/2024 18h38 : première version login fonctionnelle
 13/11/2024 19h13 : première version logout fonctionnelle
 13/11/2024 19h16 : fichier requirements mis à jour
+15/11/2024 14h09 : utilisation de la librairie Moment de Miguel Grinberg
