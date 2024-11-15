@@ -9,8 +9,10 @@ from flask_bootstrap import Bootstrap
 """ Paramétrages app """
 
 app = Flask(__name__)
+
 # Set the secret key to some random bytes. Keep this really secret!
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
 # Init moment
 moment = Moment(app)
 # Init Bootstrap
@@ -20,7 +22,7 @@ Bootstrap(app)
 
 @app.route("/")
 def hello_world():    
-    return render_template('remindr-web-flask-app.html', current_time=datetime.utcnow())
+    return render_template('remindr-web-flask-app.html')
 
     
 @app.route('/login', methods=['GET', 'POST'])
