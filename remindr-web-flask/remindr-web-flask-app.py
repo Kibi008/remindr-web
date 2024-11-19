@@ -4,7 +4,6 @@ from flask import request
 from flask import session
 from flask_moment import Moment
 from datetime import datetime
-from flask_bootstrap import Bootstrap
 
 """ Paramétrages app """
 
@@ -16,7 +15,7 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 # Init moment
 moment = Moment(app)
 # Init Bootstrap
-Bootstrap(app)
+#Bootstrap(app)
 
 """ Routing """
 

@@ -1,15 +1,7 @@
-{% extends "bootstrap/base.html" %}
-<html>
-<head>{% block title %}Remindr - Login{% endblock %}
-</head>
-<body>
+{% extends "base.html" %}
 
 
-{% block navbar %}
-<div class="navbar navbar-fixed-top">
-  <!-- ... -->
-</div>
-{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
   <script>
@@ -18,20 +10,16 @@
 
   <h1>Login</h1>
 
-  <p><a href="/">Accueil</a></p>
+  <p><a href="{{ url_for('hello_world') }}">Accueil</a></p>
 
   {% if username_in_session %}
-    <h1>Hello {{ username_in_session }}!</h1>
+    <h3>Hello {{ username_in_session }}!</h3>
   {% else %}
     <form method=post action="">
-      Nom d'utilisateur <input type="text" name="username" />
-      <input type="submit" value="Login" />
+      <label for="validationCustom05" class="form-label">Nom d'utilisateur </label>
+
+      <input id="validationCustom05" class="form-control" type="text" name="username" />
+      <input class="btn btn-primary" type="submit" value="Login" />
     </form>
   {% endif %}
 {% endblock %}
-
-
-
-
-</body>
-</html>
