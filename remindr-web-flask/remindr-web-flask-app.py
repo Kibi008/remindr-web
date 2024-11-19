@@ -23,9 +23,17 @@ moment = Moment(app)
 def hello_world():    
     return render_template('remindr-web-flask-app.html')
 
-@app.route("/sb")
+@app.route("/sb-index")
+def sb_login():    
+    return render_template('sb-admin-2/index.html')
+
+@app.route("/sb-login")
 def sb_admin():    
     return render_template('sb-admin-2/login.html')
+
+@app.route("/sb-test")
+def sb_test():    
+    return render_template('test-page.html')
 
     
 @app.route('/login', methods=['GET', 'POST'])
