@@ -1,26 +1,26 @@
-{% extends "bootstrap/base.html" %}
-{% block html_attribs %} lang="en"{% endblock %}
-{% block title %}Remindr - Accueil{% endblock %}
+{% extends "base.html" %}
 
-    {%block head%}
-    {{super()}}
-    {{ moment.include_moment() }}
-    {{ moment.locale("fr") }}
+{% block title %}Accueil{% endblock %}
+{% block head %}
+  {{ super() }}
+  
+{% endblock %}
 
-    {%endblock%}
+{{ moment.include_moment() }}
+{{ moment.locale("fr") }}
+
 
 {% block content %}
-    <h2>Template Accueil</h2>
+    <h1>Template Accueil</h1>
 
     <p>Nous sommes le {{ moment().format('DD/MM/YYYY à hh:mm:ss', refresh=True) }}.</p>
 
 
     {% if session['username'] %}
-        <h3>Bienvenue sur Remindr {{session['username']}} !</h3>
-        <p><a href="/logout">Logout</a></p>
-
+    <h3>Bienvenue sur Remindr {{session['username']}} !</h3>
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
     {% else %}
-        <h3>Bienvenue sur Remindr ! Veuillez vous <a href="/login">connecter</a>.</h3>
+    <h3>Bienvenue sur Remindr ! Veuillez vous <a href="{{ url_for('login') }}">connecter</a>.</h3>
     {% endif %}
 
 {% endblock %}
