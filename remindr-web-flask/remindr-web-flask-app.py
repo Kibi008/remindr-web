@@ -24,6 +24,10 @@ Bootstrap(app)
 def hello_world():    
     return render_template('remindr-web-flask-app.html')
 
+@app.route("/sb")
+def sb_admin():    
+    return render_template('sb-admin-2/login.html')
+
     
 @app.route('/login', methods=['GET', 'POST'])
 def login():
