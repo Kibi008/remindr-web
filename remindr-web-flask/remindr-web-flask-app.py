@@ -24,16 +24,20 @@ def hello_world():
     return render_template('remindr-web-flask-app.html')
 
 @app.route("/sb-index")
-def sb_login():    
+def sb_index():    
     return render_template('sb-admin-2/index.html')
 
 @app.route("/sb-login")
-def sb_admin():    
+def sb_login():    
     return render_template('sb-admin-2/login.html')
 
-@app.route("/sb-test")
-def sb_test():    
+@app.route("/sb-admin")
+def sb_admin():    
     return render_template('test-page.html')
+
+@app.route("/front-dashboard")
+def front_dashboard():    
+    return render_template('front-admin/index.html')
 
     
 @app.route('/login', methods=['GET', 'POST'])
