@@ -37,7 +37,7 @@ def sb_admin():
 
 @app.route("/front-dashboard")
 def front_dashboard():    
-    return render_template('front-admin/index.html')
+    return render_template('front-dashboard/index.html')
 
     
 @app.route('/login', methods=['GET', 'POST'])
