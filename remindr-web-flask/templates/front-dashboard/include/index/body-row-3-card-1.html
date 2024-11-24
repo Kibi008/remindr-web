@@ -1,0 +1,113 @@
+<div class="card h-100">
+            <!-- Header -->
+            <div class="card-header card-header-content-sm-between">
+              <h4 class="card-header-title mb-2 mb-sm-0">Transactions</h4>
+
+              <!-- Daterangepicker -->
+              <button id="js-daterangepicker-predefined" class="btn btn-ghost-secondary btn-sm dropdown-toggle">
+                <i class="bi-calendar-week"></i>
+                <span class="js-daterangepicker-predefined-preview ms-1"></span>
+              </button>
+              <!-- End Daterangepicker -->
+            </div>
+            <!-- End Header -->
+
+            <!-- Body -->
+            <div class="card-body">
+              <!-- Chart -->
+              <div class="chartjs-custom mx-auto" style="height: 20rem;">
+                <canvas class="js-chart-datalabels" data-hs-chartjs-options='{
+                              "type": "bubble",
+                              "data": {
+                                "datasets": [
+                                  {
+                                    "label": "Label 1",
+                                    "data": [
+                                      {"x": 50, "y": 65, "r": 99}
+                                    ],
+                                    "color": "#fff",
+                                    "backgroundColor": "rgba(55, 125, 255, 0.9)",
+                                    "borderColor": "transparent"
+                                  },
+                                  {
+                                    "label": "Label 2",
+                                    "data": [
+                                      {"x": 46, "y": 42, "r": 65}
+                                    ],
+                                    "color": "#fff",
+                                    "backgroundColor": "rgba(100, 0, 214, 0.8)",
+                                    "borderColor": "transparent"
+                                  },
+                                  {
+                                    "label": "Label 3",
+                                    "data": [
+                                      {"x": 48, "y": 15, "r": 38}
+                                    ],
+                                    "color": "#fff",
+                                    "backgroundColor": "#00c9db",
+                                    "borderColor": "transparent"
+                                  },
+                                  {
+                                    "label": "Label 3",
+                                    "data": [
+                                      {"x": 55, "y": 2, "r": 61}
+                                    ],
+                                    "color": "#fff",
+                                    "backgroundColor": "#4338ca",
+                                    "borderColor": "transparent"
+                                  }
+                                ]
+                              },
+                              "options": {
+                                "scales": {
+                                  "y": {
+                                    "grid": {
+                                      "display": false,
+                                      "drawBorder": false
+                                    },
+                                    "ticks": {
+                                      "display": false,
+                                      "max": 100,
+                                      "beginAtZero": true
+                                    }
+                                  },
+                                  "x": {
+                                  "grid": {
+                                      "display": false,
+                                      "drawBorder": false
+                                    },
+                                    "ticks": {
+                                      "display": false,
+                                      "max": 100,
+                                      "beginAtZero": true
+                                    }
+                                  }
+                                },
+                                "plugins": {
+                                  "tooltip": false
+                                }
+                              }
+                            }'></canvas>
+              </div>
+              <!-- End Chart -->
+
+              <div class="row justify-content-center">
+                <div class="col-auto">
+                  <span class="legend-indicator bg-primary"></span> New
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                  <span class="legend-indicator" style="background-color: #7000f2;"></span> Pending
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                  <span class="legend-indicator bg-info"></span> Failed
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+            </div>
+            <!-- End Body -->
+          </div>
