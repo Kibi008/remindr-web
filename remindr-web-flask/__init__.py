@@ -13,7 +13,7 @@ def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY='dev',
+        SECRET_KEY=b'_5#y2L"F4Q8z\n\xec]/',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
     )
 
@@ -35,9 +35,6 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
     
-    # Set the secret key to some random bytes. Keep this really secret!
-    app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-
     # Init moment
     moment = Moment(app)
     # Init Bootstrap
