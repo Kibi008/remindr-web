@@ -1,0 +1,122 @@
+<div class="card h-100">
+            <!-- Header -->
+            <div class="card-header card-header-content-sm-between">
+              <h4 class="card-header-title mb-2 mb-sm-0">Monthly expenses</h4>
+
+              <!-- Nav -->
+              <ul class="nav nav-segment nav-fill" id="expensesTab" role="tablist">
+                <li class="nav-item" data-bs-toggle="chart-bar" data-datasets="thisWeek" data-trigger="click" data-action="toggle">
+                  <a class="nav-link active" href="javascript:;" data-bs-toggle="tab">This week</a>
+                </li>
+                <li class="nav-item" data-bs-toggle="chart-bar" data-datasets="lastWeek" data-trigger="click" data-action="toggle">
+                  <a class="nav-link" href="javascript:;" data-bs-toggle="tab">Last week</a>
+                </li>
+              </ul>
+              <!-- End Nav -->
+            </div>
+            <!-- End Header -->
+
+            <!-- Body -->
+            <div class="card-body">
+              <div class="row mb-4">
+                <div class="col-sm mb-2 mb-sm-0">
+                  <div class="d-flex align-items-center">
+                    <span class="h1 mb-0">35%</span>
+                    <span class="text-success ms-2">
+                      <i class="bi-graph-up"></i> 25.3%
+                    </span>
+                  </div>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-sm-auto align-self-sm-end">
+                  <div class="row fs-6 text-body">
+                    <div class="col-auto">
+                      <span class="legend-indicator bg-primary"></span> New
+                    </div>
+                    <!-- End Col -->
+
+                    <div class="col-auto">
+                      <span class="legend-indicator"></span> Overdue
+                    </div>
+                    <!-- End Col -->
+                  </div>
+                  <!-- End Row -->
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+
+              <!-- Bar Chart -->
+              <div class="chartjs-custom">
+                <canvas id="updatingBarChart" style="height: 20rem;" data-hs-chartjs-options='{
+                          "type": "bar",
+                          "data": {
+                            "labels": ["May 1", "May 2", "May 3", "May 4", "May 5", "May 6", "May 7", "May 8", "May 9", "May 10"],
+                            "datasets": [{
+                              "data": [200, 300, 290, 350, 150, 350, 300, 100, 125, 220],
+                              "backgroundColor": "#377dff",
+                              "hoverBackgroundColor": "#377dff",
+                              "borderColor": "#377dff",
+                              "maxBarThickness": "10"
+                            },
+                            {
+                              "data": [150, 230, 382, 204, 169, 290, 300, 100, 300, 225, 120],
+                              "backgroundColor": "#e7eaf3",
+                              "borderColor": "#e7eaf3",
+                              "maxBarThickness": "10"
+                            }]
+                          },
+                          "options": {
+                            "scales": {
+                              "y": {
+                                "grid": {
+                                  "color": "#e7eaf3",
+                                  "drawBorder": false,
+                                  "zeroLineColor": "#e7eaf3"
+                                },
+                                "ticks": {
+                                  "beginAtZero": true,
+                                  "stepSize": 100,
+                                  "fontSize": 12,
+                                  "fontColor":  "#97a4af",
+                                  "fontFamily": "Open Sans, sans-serif",
+                                  "padding": 10,
+                                  "postfix": "$"
+                                }
+                              },
+                              "x": {
+                                "grid": {
+                                  "display": false,
+                                  "drawBorder": false
+                                },
+                                "ticks": {
+                                  "fontSize": 12,
+                                  "fontColor":  "#97a4af",
+                                  "fontFamily": "Open Sans, sans-serif",
+                                  "padding": 5
+                                },
+                                "categoryPercentage": 0.5,
+                                "maxBarThickness": "10"
+                              }
+                            },
+                            "cornerRadius": 2,
+                            "plugins": {
+                              "tooltip": {
+                                "prefix": "$",
+                                "hasIndicator": true,
+                                "mode": "index",
+                                "intersect": false
+                              }
+                            },
+                            "hover": {
+                              "mode": "nearest",
+                              "intersect": true
+                            }
+                          }
+                        }'></canvas>
+              </div>
+              <!-- End Bar Chart -->
+            </div>
+            <!-- End Body -->
+          </div>
