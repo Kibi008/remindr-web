@@ -11,10 +11,10 @@ from flask import Flask
 
 def create_app(test_config=None):
     # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
+    app = Flask(__name__, template_folder="templates", instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY=b'_5#y2L"F4Q8z\n\xec]/',
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+        DATABASE=os.path.join(app.instance_path, 'remindr.sqlite'),
     )
 
     if test_config is None:
@@ -39,6 +39,16 @@ def create_app(test_config=None):
     moment = Moment(app)
     # Init Bootstrap
     #Bootstrap(app)
+
+    from . import db
+    db.init_app(app)
+
+    from . import auth
+    app.register_blueprint(auth.bp)
+
+    from . import blog
+    app.register_blueprint(blog.bp)
+    app.add_url_rule('/', endpoint='index')
 
     """ Routing """
 
@@ -77,6 +87,10 @@ def create_app(test_config=None):
         app.logger.debug('Logout in process...')
         session.pop("username", None)
         return redirect("/") 
+    
+    @app.route('/rappel', methods=['GET', 'POST'])
+    def rappel():
+        return render_template('form-rappel.html') 
         
         
     """ Autres méthodes """
