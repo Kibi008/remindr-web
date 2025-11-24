@@ -11,9 +11,16 @@ bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
+    print(request.method)
     if request.method == 'POST':
+        
         username = request.form['username']
         password = request.form['password']
+        hash_password = generate_password_hash(password)
+
+        print("username", username)
+        print("password", hash_password)
+        
         db = get_db()
         error = None
 
@@ -29,10 +36,12 @@ def register():
         if error is None:
             db.execute(
                 'INSERT INTO user (username, password) VALUES (?, ?)',
-                (username, generate_password_hash(password))
+                (username, hash_password)
             )
             db.commit()
             return redirect(url_for('auth.login'))
+        else:
+            print("error", error)
 
         flash(error)
 
