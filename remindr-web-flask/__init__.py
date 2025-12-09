@@ -8,7 +8,6 @@ from datetime import datetime
 
 from flask import Flask
 
-
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, template_folder="templates", instance_relative_config=True)
@@ -112,5 +111,7 @@ def create_app(test_config=None):
             username_in_session = session['username']
             app.logger.debug(username_in_session)
         return render_template('login.html', username_in_session=username_in_session)
+    
+    
 
     return app
